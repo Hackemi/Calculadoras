@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main() {
+    bool otro = true;
+    while (otro) {
+        int n, contador = 0;
+        printf("ingresa un numero: ");
+        scanf("%d", &n);
+        if (n == 0) {
+            printf("ingresa un numero que no sea 0: ");
+            scanf("%d", &n);
+        }
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                contador++;
+            }
+        }
+        if (contador == 2) {
+            printf("el numero ingresado es un numero primo\n");
+        } else {
+            printf("el numero ingresado no es un numero primo\n");
+            printf("quiere ingresar otro numero? (s/n): ");
+            char respuesta;
+            scanf(" %c", &respuesta);
+            if (respuesta == 'n') {
+                otro = false;
+            }
+        }
+    }
+    return 0;
+}
