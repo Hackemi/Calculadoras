@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main() {
+    bool otro=true;
+    while (otro){
+        int n, ni=0, d;
+    printf("ingrese un numero de 4 cifras\n");
+    scanf("%d", &n);
+    while(n != 0){
+    d=n%10;
+    ni=(ni*10)+d;
+    n=n/10;
+    }
+    printf("numero inverso %d\n", ni);
+     printf("quiere ingresar otro numero? (s/n):");
+        char respuesta;
+        scanf(" %c", &respuesta);
+        if (respuesta == 'n') {
+            otro = false;
+        }
+    }
+    return 0;
+}
